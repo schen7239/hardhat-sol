@@ -1,0 +1,37 @@
+npx solhint contracts/*.sol
+
+module.exports.tags = ["all", "mocks"] found in ./deploy/00-deploy-mocks.js
+this allows you to compile this file specifially if you include a tags
+npx hardhat deploy --tags mocks
+
+
+best practices:
+pragma
+imports
+errorcodes: error ContractName__ErrorName
+interface, libraries, contracts
+
+contract syntax:
+type declarations
+state variables
+event modifiers
+functions
+
+function order:
+constructor
+receive
+fallback
+external
+public
+internal
+private
+view/pure
+
+import "hardhat/console.sol" so that you can use console.log within solidity files to debug
+
+./artifacts/build-info/{any file} 
+control f "opcodes"
+
+even if variables are declared as private, they can still be read from the chain
+
+revert > require because require is more expensive
